@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Play Sound</title>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let audio = new Audio("i-am-steve.mp3");
+            audio.play().catch(error => {
+                console.log("Autoplay is geblokkeerd, klik ergens om het af te spelen.");
+            });
+        });
+    </script>
+</body>
+</html>
