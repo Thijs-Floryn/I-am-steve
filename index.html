@@ -10,30 +10,20 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
-        }
-        #playButton {
-            padding: 20px 40px;
-            font-size: 20px;
-            border: none;
-            border-radius: 50px;
-            background-color: #007BFF;
-            color: white;
             cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        #playButton:hover {
-            background-color: #0056b3;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <button id="playButton">Klik hier als het geluid niet speelt</button>
+    <h1>Klik ergens om het geluid af te spelen</h1>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let audio = new Audio("i-am-steve.mp3");
             let autoplay = audio.play().catch(error => {
                 console.log("Autoplay is geblokkeerd, gebruiker moet eerst klikken.");
-            });document.getElementById("playButton").addEventListener("click", function() {
+            });document.body.addEventListener("click", function() {
             audio.play();
         });
     });
