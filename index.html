@@ -5,13 +5,17 @@
     <title>Auto Play Sound</title>
 </head>
 <body>
+    <button id="playButton">Klik hier als het geluid niet speelt</button>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let audio = new Audio("i-am-steve.mp3");
-            audio.play().catch(error => {
-                console.log("Autoplay is geblokkeerd, klik ergens om het af te spelen.");
-            });
+            let autoplay = audio.play().catch(error => {
+                console.log("Autoplay is geblokkeerd, gebruiker moet eerst klikken.");
+            });document.getElementById("playButton").addEventListener("click", function() {
+            audio.play();
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
